@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.div-table {
+  display: table;
+  width: auto;
+  background-color: #eee;
+  border: 1px solid #666666;
+  border-spacing: 5px; /* cellspacing:poor IE support for  this */
+}
+.div-table-row {
+  display: table-row;
+  width: auto;
+  clear: both;
+}
+.div-table-col {
+  float: left; /* fix for  buggy browsers */
+  display: table-column;
+  width: 200px;
+  background-color: #ccc;
+}
+
+.table {
+  display: table;
+  width: auto;
+  border-spacing: 5px; /* cellspacing:poor IE support for  this */
+}
+
+.column {
+  float: left;
+  display: table-column;
+  width: 50%;
+}
+.row {
+  content: "";
+  display: table-row;
+}
+.logo img {
+  width: 100px;
+}
+
+.video {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.timeline {
+  padding: 20px;
+  background-color: #e6e6e6;
+  text-align: center;
+}
+
+.history {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.year {
+  font-weight: bold;
+}
+
+.event {
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100px;
+  background-color: white;
+}
+
+.paralympics {
+  padding: 20px;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.paralympics-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #008cba;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.paralympics-image img {
+  width: 100%;
+  max-width: 300px;
+}
+
+footer {
+  padding: 20px;
+  background-color: #ddd;
+  text-align: center;
+}
