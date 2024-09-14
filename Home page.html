@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="en">
+  <html lang="en">
+    <head>
+      <link rel="stylesheet" href="styles.css" />
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Olympics Horizon</title>
+      <link rel="stylesheet" href="styles.css" />
+      <style>
+        /* Styling for the container to hold the image */
+        .image-container {
+          width: 100%; /* Full width to center the image */
+          display: flex; /* Enables flexbox */
+          justify-content: center; /* Centers horizontally */
+          align-items: center; /* Centers vertically */
+          height: 70vh; /* Adjusts the height as needed */
+          overflow: hidden;
+           /* Ensures no overflow when hover effects occur */
+        }
+  
+        /* General styling for the image */
+        .image-container img {
+          max-width: 90 /* Ensure the image doesn't overflow */
+          height: 90; /* Keep aspect ratio */
+          transition: filter 0.5s ease; /* Smooth transition for blur effect */
+        }
+  
+        /* Hover effect: blur */
+        .image-container img:hover {
+          filter: blur(5px); /* Adds the blur on hover */
+        }
+  
+        .paralympics-image img {
+          display: block;
+          margin: 0 auto; /* Centering the Paralympics image */
+          max-width: 100%;
+          height: auto;
+        }
+        .scroll-down-btn {
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+  align-items: center;
+  margin: 20px auto; /* Centers the button and adds space around it */
+  width: 100%;
+}
+
+.scroll-down-btn a {
+  text-decoration: none;
+}
+
+.scroll-down-btn img {
+  width: 100px;
+  height: 100px;
+}
+/* Image container to hold the images */
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Individual wrapper for each image, needed for positioning the button */
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* General styling for images */
+.image-wrapper img {
+  width: 300px; /* Adjust image size as needed */
+  height: auto;
+  transition: filter 0.5s ease; /* Smooth transition for hover effect */
+}
+
+/* Hidden button to show on hover */
+.hover-button {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Hover effect: Show button and blur image */
+.image-wrapper:hover img {
+  filter: blur(5px);
+}
+
+.image-wrapper:hover .hover-button {
+  display: block;
+}
+
+
+      </style>
+    </head>
+    <body>
+      <header class="header">
+        <img src="Olympic_1_generated.jpg" alt="Logo" class="logo" />
+        <div class="title2">Olympics Horizon</div>
+      </header>
+  
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0&loop=1&autoplay=1"
+          allowfullscreen
+        ></iframe>
+      </div>
+  
+
+<!-- Scroll Down Button -->
+<div class="scroll-down-btn">
+  <a href="#tinda">
+    <img src="arrow-down.png" alt="Scroll Down" width="100" height="100">
+  </a>
+</div>
+
+
+<!-- Section to scroll to -->
+<section id="next-section">
+  <!-- Your content for the section -->
+</section>
+
+
+    </div>
+    <div class="div-table">
+      <div class="div-table-row">
+        <div class="video div-table-column"></div>
+        <div class="div--table-column"></div>
+      </div>
+    </div>
+   <div>
+    <div class="title" alig> Timeline of the Olympics</div>
+    <div class="timeline">
+      <div class="container left">
+        <div class="content">
+          <h2>776-BCE</h2>
+          <p>
+            The First Ancient Olympic Games are held in Olympia, Greece,
+            featuring a single event—the sprint.
+          </p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>732-BCE</h2>
+          <p>The addition of the long jump.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>708-BCE</h2>
+          <p>Introduction of the pentathlon (five events)</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>680-BCE</h2>
+          <p>The wrestling event is added.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>369-BCE</h2>
+          <p>
+            The first marathon is introduced, inspired by the legend of
+            Pheidippides.
+          </p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>393-AD</h2>
+          <p>
+            The last recorded Ancient Olympic Games are held, as Emperor
+            Theodosius I abolishes all pagan festivals.
+          </p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>680-BCE</h2>
+          <p>
+            1896: The First Modern Olympic Games are held in Athens, Greece,
+            with 13 nations participating.
+          </p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>680-BCE</h2>
+          <p>
+            1900: The games are held in Paris, featuring female athletes for the
+            first time.
+          </p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>1900</h2>
+          <p>The games are held in Paris, featuring female athletes for the first time.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>1904</h2>
+          <p>The Olympics take place in St. Louis, USA, marking the first time the games are held in North America.</p>
+        </div>
+      </div>  
+      <div class="container left">
+        <div class="content">
+          <h2>1916</h2>
+          <p>The games are scheduled in Berlin, Germany, but are canceled due to World War I</p>
+        </div>
+      </div>
+        <div class="container right">
+          <div class="content">
+            <h2>1936</h2>
+            <p>
+              The Berlin Games showcase the controversial use of the Olympics for propaganda by Nazi Germany.
+            </p>
+          </div>
+        </div>
+          <div class="container left">
+            <div class="content">
+              <h2>1960</h2>
+              <p>The Rome Olympics are the first to be televised live.</p>
+            </div>
+        </div>
+        <div class="container right">
+          <div class="content">
+              <h2>1980</h2>
+              <p>The Moscow Olympics see a boycott by many countries in protest of the Soviet invasion of Afghanistan.</p>
+          </div>
+      </div>
+      
+      <div class="container left">
+          <div class="content">
+              <h2>1984</h2>
+              <p>The Los Angeles Games are marked by a successful financial model, leading to a profit.</p>
+          </div>
+      </div>
+      
+      <div class="container right">
+          <div class="content">
+              <h2>2008</h2>
+              <p>The Beijing Olympics feature spectacular opening and closing ceremonies, showcasing Chinese culture.</p>
+          </div>
+      </div>
+      <div class="container left">
+        <section id="tinda" class="paralympics">
+          <div class="content">
+              <h2>2020</h2>
+              <p>The Tokyo Olympics are postponed to 2021 due to the COVID-19 pandemic, marking the first delay in the Olympics.</p>
+        </section>
+          </div>
+      </div>   
+    </div>
+         
+
+
+        <!-- Image container for the archery and club throw images with hover buttons -->
+        <div class="image-container" style="margin-right: 70%;">
+          <!-- First image with hover button -->
+          <div class="image-wrapper">
+            <img src="compound archery picture.webp" alt="Archery Image" style="width: 100%;" />
+            <a href="Olympics page.html">
+            <button class="hover-button">More about Olympics</button>
+            </a>            
+          </div>
+          
+          <!-- Second image with hover button -->
+          <div class="image-wrapper">
+            <img src="paralympics archery.avif" alt="Club Throw Image" style="width: 100%;"/>
+            <button class="hover-button">More about Paralympics</button>
+            
+             
+            
+          </div>
+        </div>
+       
+s
+</body>
+</html>
