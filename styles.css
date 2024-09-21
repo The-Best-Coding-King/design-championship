@@ -503,3 +503,249 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+
+              /* Styling for the container to hold the image */
+              .image-container {
+                width: 100%; /* Full width to center the image */
+                display: flex; /* Enables flexbox */
+                justify-content: center; /* Centers horizontally */
+                align-items: center; /* Centers vertically */
+                height: 70vh; /* Adjusts the height as needed */
+                overflow: hidden;
+                 /* Ensures no overflow when hover effects occur */
+              }
+
+              /* General styling for the image */
+              .image-container img {
+                max-width: 90 /* Ensure the image doesn't overflow */
+                height: 90; /* Keep aspect ratio */
+                transition: filter 0.5s ease; /* Smooth transition for blur effect */
+              }
+
+              /* Hover effect: blur */
+              .image-container img:hover {
+                filter: blur(5px); /* Adds the blur on hover */
+              }
+
+              .paralympics-image img {
+                display: block;
+                margin: 0 auto; /* Centering the Paralympics image */
+                max-width: 100%;
+                height: auto;
+              }
+              .scroll-down-btn {
+        display: flex;
+        justify-content: center; /* Centers the button horizontally */
+        align-items: center;
+        margin: 20px auto; /* Centers the button and adds space around it */
+        width: 100%;
+      }
+
+      .scroll-down-btn a {
+        text-decoration: none;
+      }
+
+      .scroll-down-btn img {
+        width: 100px;
+        height: 100px;
+      }
+      /* Image container to hold the images */
+      .image-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      /* Individual wrapper for each image, needed for positioning the button */
+      .image-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* General styling for images */
+      .image-wrapper img {
+        width: 300px; /* Adjust image size as needed */
+        height: auto;
+        transition: filter 0.5s ease; /* Smooth transition for hover effect */
+      }
+
+      /* Hidden button to show on hover */
+      .hover-button {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Hover effect: Show button and blur image */
+      .image-wrapper:hover img {
+        filter: blur(5px);
+      }
+
+      .image-wrapper:hover .hover-button {
+        display: block;
+      }
+          body {
+            font-family: Arial, sans-serif;
+          }
+
+          .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+          }
+
+          .tab-container button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+          }
+
+          .tab-container button:hover {
+            background-color: #45a049;
+          }
+
+          .tab-container button.active {
+            background-color: #3e8e41;
+          }
+
+          .table-container {
+            display: none;
+            overflow-y: auto;
+            max-height: 400px;
+            margin: 0 auto;
+            width: 80%;
+          }
+
+          .table-container.active {
+            display: block;
+          }
+
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+          }
+
+          table,
+          th,
+          td {
+            border: 1px solid #dddddd;
+          }
+
+          th,
+          td {
+            padding: 8px;
+          }
+
+          th {
+            background-color: #f2f2f2;
+          }
+          
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .table-container {
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow-x: auto;
+            display: block;
+            max-height: 300px; /* Set the maximum height for the table */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50; /* Green background for headers */
+            color: white; /* White text for headers */
+        }
+
+        td {
+            background-color: #f9f9f9; /* Light gray background for table cells */
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f2f2f2; /* Slightly darker gray for alternate rows */
+        }
+
+        .switch-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+
+        .switch-button:hover {
+            background-color: #45a049;
+        }
+
+        .switch-button.active {
+            background-color: #3e8e41;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .hidden {
+            display: none;
+        }
+
+        .table-image {
+            width: 100%; /* Adjust the width as needed */
+            max-height: 200px; /* Adjust the height as needed */
+            object-fit: cover; /* Maintain aspect ratio */
+            margin-bottom: 10px;
+        }
+
+        h2 {
+      text-align: center;
+    }
+
+    /* Styling for the table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    /* Styling for search input */
+    #tableSearch {
+      margin-bottom: 20px;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      border: 1px solid #ddd;
+    }

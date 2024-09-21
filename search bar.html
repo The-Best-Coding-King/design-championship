@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lan="eng">
+  <style>
+    .search {
+      --padding: 14px;
+
+      width: max-content;
+      display: flex;
+      align-items: center;
+      padding: var(--padding);
+      border-radius: 28px;
+      background: #e8e9eb;
+      transition: background 0.25s;
+    }
+
+    .search:focus-within {
+      box-shadow: rgba(0, 0, 0, 0.75);
+    }
+    .search-input {
+      font-size: 16px;
+      font-family: "lexend", sans-serif;
+      color: #33333;
+      margin: left var(--padding);
+      outline: none;
+      border: none;
+      background: transparent;
+    }
+
+    .search-input::placeholder,
+    .search-icon {
+      color: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Bar</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <form>
+      <div class="search">
+        <span class="search-icon material-symbols-outlined">search</span>
+        <input class="search-input" type="search" placeholder="search" />
+      </div>
+    </form>
+  </body>
+</html>

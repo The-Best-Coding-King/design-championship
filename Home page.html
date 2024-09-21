@@ -1,356 +1,747 @@
-<!DOCTYPE html><html lang="en">
-  <html lang="en">
-    <head>
-      <link rel="stylesheet" href="styles.css" />
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Olympics Horizon</title>
-      <link rel="stylesheet" href="styles.css" />
-      <style>
+  <!DOCTYPE html><html lang="en">
+    <html lang="en">
+      <head>
+        <link rel="stylesheet" href="styles.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Olympics Horizon</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
 
 
-* {
-  box-sizing: border-box;
-}
+  * {
+    box-sizing: border-box;
+  }
 
-/* Create a column layout with Flexbox */
-.row {
-  display: flex;
-}
+  /* Create a column layout with Flexbox */
+  .row {
+    display: flex;
+  }
 
-/* Left column (menu) */
-.left {
-  flex: 35%;
-  padding: 15px 0;
-}
+  /* Left column (menu) */
+  .left {
+    flex: 35%;
+    padding: 15px 0;
+  }
 
-.left h2 {
-  padding-left: 8px;
-}
+  .left h2 {
+    padding-left: 8px;
+  }
 
-/* Right column (page content) */
-.right {
-  flex: 65%;
-  padding: 15px;
-}
+  /* Right column (page content) */
+  .right {
+    flex: 65%;
+    padding: 15px;
+  }
 
-/* Style the search box */
-#mySearch {
-  width: 100%;
-  font-size: 18px;
-  padding: 11px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px; /* Add margin for spacing */
-}
+  /* Style the search box */
+  #mySearch {
+    width: 100%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px; /* Add margin for spacing */
+  }
 
-/* Style the navigation menu inside the left column */
-#myMenu {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+  /* Style the navigation menu inside the left column */
+  #myMenu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 
-#myMenu li a {
-  padding: 12px;
-  text-decoration: none;
-  color: black;
-  display: block;
-}
+  #myMenu li a {
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    display: block;
+  }
 
-#myMenu li a:hover {
-  background-color: #eee;
-}
+  #myMenu li a:hover {
+    background-color: #eee;
+  }
 
-/* Style for the table */
-#myTable {
-  width: 100%;
-  border-collapse: collapse;
-}
+  /* Style for the table */
+  #myTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
-#myTable th, #myTable td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
+  #myTable th, #myTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
 
-   
-        .image-container {
-          width: 100%; 
-          display: flex; 
-          justify-content: center;
-          align-items: center; 
-          height: 70vh; 
-          overflow: hidden;
-         
-        }
-  
-
-        .image-container img {
-          max-width: 90 
-          height: 90; 
-          transition: filter 0.5s ease; 
-        }
-  
-
-        .image-container img:hover {
-          filter: blur(5px);
-        }
-  
-        .paralympics-image img {
-          display: block;
-          margin: 0 auto; 
-          max-width: 100%;
-          height: auto;
-        }
-        .scroll-down-btn {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  margin: 20px auto; 
-  width: 100%;
-}
-
-.scroll-down-btn a {
-  text-decoration: none;
-}
-
-.scroll-down-btn img {
-  width: 100px;
-  height: 100px;
-}
-
-.image-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.image-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-
-.image-wrapper img {
-  width: 300px; 
-  height: auto;
-  transition: filter 0.5s ease; 
-}
-
-
-.hover-button {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.image-wrapper:hover img {
-  filter: blur(5px);
-}
-
-.image-wrapper:hover .hover-button {
-  display: block;
-}
-
-
-      </style>
-    </head>
-    <body>
-      <header class="header">
-        <img src="Olympic_1_generated.jpg" alt="Logo" class="logo" />
-        <div class="title2">Olympics Horizon</div>
-      </header>
-  
-      <div class="video-container">
-        <iframe
-          width="100%"
-          height="315"
-          src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0&loop=1&autoplay=1"
-          allowfullscreen
-        ></iframe>
-      </div>
-  
-
-<!-- Scroll Down Button -->
-<div class="scroll-down-btn">
-  <a href="#tinda">
-    <img src="arrow-down.png" alt="Scroll Down" width="100" height="100">
-  </a>
-</div>
-
-
-<!-- Section to scroll to -->
-<section id="next-section">
-  <!-- Your content for the section -->
-</section>
-
-
-    </div>
-    <div class="div-table">
-      <div class="div-table-row">
-        <div class="video div-table-column"></div>
-        <div class="div--table-column"></div>
-      </div>
-    </div>
-   <div>
-    <div class="title" alig> Timeline of the Olympics</div>
-    <div class="timeline">
-      <div class="container left">
-        <div class="content">
-          <h2>776-BCE</h2>
-          <p>
-            The First Ancient Olympic Games are held in Olympia, Greece,
-            featuring a single event—the sprint.
-          </p>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
-          <h2>732-BCE</h2>
-          <p>The addition of the long jump.</p>
-        </div>
-      </div>
-      <div class="container left">
-        <div class="content">
-          <h2>708-BCE</h2>
-          <p>Introduction of the pentathlon (five events)</p>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
-          <h2>680-BCE</h2>
-          <p>The wrestling event is added.</p>
-        </div>
-      </div>
-      <div class="container left">
-        <div class="content">
-          <h2>369-BCE</h2>
-          <p>
-            The first marathon is introduced, inspired by the legend of
-            Pheidippides.
-          </p>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
-          <h2>393-AD</h2>
-          <p>
-            The last recorded Ancient Olympic Games are held, as Emperor
-            Theodosius I abolishes all pagan festivals.
-          </p>
-        </div>
-      </div>
-      <div class="container left">
-        <div class="content">
-          <h2>680-BCE</h2>
-          <p>
-            1896: The First Modern Olympic Games are held in Athens, Greece,
-            with 13 nations participating.
-          </p>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
-          <h2>680-BCE</h2>
-          <p>
-            1900: The games are held in Paris, featuring female athletes for the
-            first time.
-          </p>
-        </div>
-      </div>
-      <div class="container left">
-        <div class="content">
-          <h2>1900</h2>
-          <p>The games are held in Paris, featuring female athletes for the first time.</p>
-        </div>
-      </div>
-      <div class="container right">
-        <div class="content">
-          <h2>1904</h2>
-          <p>The Olympics take place in St. Louis, USA, marking the first time the games are held in North America.</p>
-        </div>
-      </div>  
-      <div class="container left">
-        <div class="content">
-          <h2>1916</h2>
-          <p>The games are scheduled in Berlin, Germany, but are canceled due to World War I</p>
-        </div>
-      </div>
-        <div class="container right">
-          <div class="content">
-            <h2>1936</h2>
-            <p>
-              The Berlin Games showcase the controversial use of the Olympics for propaganda by Nazi Germany.
-            </p>
-          </div>
-        </div>
-          <div class="container left">
-            <div class="content">
-              <h2>1960</h2>
-              <p>The Rome Olympics are the first to be televised live.</p>
-            </div>
-        </div>
-        <div class="container right">
-          <div class="content">
-              <h2>1980</h2>
-              <p>The Moscow Olympics see a boycott by many countries in protest of the Soviet invasion of Afghanistan.</p>
-          </div>
-      </div>
-      
-      <div class="container left">
-          <div class="content">
-              <h2>1984</h2>
-              <p>The Los Angeles Games are marked by a successful financial model, leading to a profit.</p>
-          </div>
-      </div>
-      
-      <div class="container right">
-          <div class="content">
-              <h2>2008</h2>
-              <p>The Beijing Olympics feature spectacular opening and closing ceremonies, showcasing Chinese culture.</p>
-          </div>
-      </div>
-      <div class="container left">
-        <section id="tinda" class="paralympics">
-          <div class="content">
-              <h2>2020</h2>
-              <p>The Tokyo Olympics are postponed to 2021 due to the COVID-19 pandemic, marking the first delay in the Olympics.</p>
-        </section>
-          </div>
-      </div>   
-    </div>
-         
-
-
-        <!-- Image container for the archery and club throw images with hover buttons -->
-        <div class="image-container" style="margin-right: 70%;">
-          <!-- First image with hover button -->
-          <div class="image-wrapper">
-            <img src="compound archery picture.webp" alt="Archery Image" style="width: 100%;" />
-            <a href="Olympics page.html">
-            <button class="hover-button">More about Olympics</button>
-            </a>            
-          </div>
+    
+          .image-container {
+            width: 100%; 
+            display: flex; 
+            justify-content: center;
+            align-items: center; 
+            height: 70vh; 
+            overflow: hidden;
           
-          <!-- Second image with hover button -->
-          <div class="image-wrapper">
-            <img src="paralympics archery.avif" alt="Club Throw Image" style="width: 100%;"/>
-            <button class="hover-button">More about Paralympics</button>
-            
-             
-            
-          </div>
-        </div>
-       
+          }
+    
 
-</body>
-</html>
+          .image-container img {
+            max-width: 90 
+            height: 90; 
+            transition: filter 0.5s ease; 
+          }
+    
+
+          .image-container img:hover {
+            filter: blur(5px);
+          }
+    
+          .paralympics-image img {
+            display: block;
+            margin: 0 auto; 
+            max-width: 100%;
+            height: auto;
+          }
+          .scroll-down-btn {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 20px auto; 
+    width: 100%;
+  }
+
+  .scroll-down-btn a {
+    text-decoration: none;
+  }
+
+  .scroll-down-btn img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .image-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+
+
+  .image-wrapper img {
+    width: 300px; 
+    height: auto;
+    transition: filter 0.5s ease; 
+  }
+
+
+  .hover-button {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .image-wrapper:hover img {
+    filter: blur(5px);
+  }
+
+  .image-wrapper:hover .hover-button {
+    display: block;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    background: #f6f9fc;
+    font-family: "Open Sans", sans-serif;
+    color: #525f7f;
+  }
+
+  h2 {
+    margin: 5%;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 100;
+  }
+
+  h1 {
+    margin: 4%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 10;
+    top: 0;
+  }
+
+  .timeline {
+    margin: auto;
+    width: 50%;
+    /* Remove the border property here */
+    padding: 10px;
+  }
+
+  .timeline__event {
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    margin: 20px 0;
+    border-radius: 6px;
+    align-self: center;
+    width: 50vw;
+  }
+  .timeline__event:nth-child(2n + 1) {
+    flex-direction: row-reverse;
+  }
+  .timeline__event:nth-child(2n + 1) .timeline__event__date {
+    border-radius: 0 6px 6px 0;
+  }
+  .timeline__event:nth-child(2n + 1) .timeline__event__content {
+    border-radius: 6px 0 0 6px;
+  }
+  .timeline__event:nth-child(2n + 1) .timeline__event__icon:before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: #f6a4ec;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    right: auto;
+    z-index: -1;
+    transform: translateX(-50%);
+    -webkit-animation: fillTop 2s forwards 4s ease-in-out;
+    animation: fillTop 2s forwards 4s ease-in-out;
+  }
+  .timeline__event:nth-child(2n + 1) .timeline__event__icon:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #f6a4ec;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    top: 50%;
+    left: auto;
+    transform: translateY(-50%);
+    -webkit-animation: fillLeft 2s forwards 4s ease-in-out;
+    animation: fillLeft 2s forwards 4s ease-in-out;
+  }
+  .timeline__event__title {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #9251ac;
+    letter-spacing: 1.5px;
+  }
+  .timeline__event__content {
+    padding: 20px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    background: #fff;
+    width: calc(40vw - 84px);
+    border-radius: 0 6px 6px 0;
+  }
+  .timeline__event__date {
+    color: #f6a4ec;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: #9251ac;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 0 20px;
+    border-radius: 6px 0 0 6px;
+  }
+  .timeline__event__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9251ac;
+    padding: 20px;
+    align-self: center;
+    margin: 0 20px;
+    background: #f6a4ec;
+    border-radius: 100%;
+    width: 40px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
+      0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+    padding: 40px;
+    height: 40px;
+    position: relative;
+  }
+  .timeline__event__icon i {
+    font-size: 32px;
+  }
+  .timeline__event__icon:before {
+    content: "";
+    width: 2px;
+    height: 100%;
+    background: #f6a4ec;
+    position: absolute;
+    top: 0%;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-animation: fillTop 2s forwards 4s ease-in-out;
+    animation: fillTop 2s forwards 4s ease-in-out;
+  }
+  .timeline__event__icon:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: #f6a4ec;
+    position: absolute;
+    left: 0%;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-animation: fillLeftOdd 2s forwards 4s ease-in-out;
+    animation: fillLeftOdd 2s forwards 4s ease-in-out;
+  }
+  .timeline__event__description {
+    flex-basis: 100%;
+  }
+  .timeline__event--type2:after {
+    background: #555ac0;
+  }
+  .timeline__event--type2 .timeline__event__date {
+    color: #87bbfe;
+    background: #555ac0;
+  }
+  .timeline__event--type2:nth-child(2n + 1) .timeline__event__icon:before,
+  .timeline__event--type2:nth-child(2n + 1) .timeline__event__icon:after {
+    background: #87bbfe;
+  }
+  .timeline__event--type2 .timeline__event__icon {
+    background: #87bbfe;
+    color: #555ac0;
+  }
+  .timeline__event--type2 .timeline__event__icon:before,
+  .timeline__event--type2 .timeline__event__icon:after {
+    background: #87bbfe;
+  }
+  .timeline__event--type2 .timeline__event__title {
+    color: #555ac0;
+  }
+  .timeline__event--type3:after {
+    background: #24b47e;
+  }
+  .timeline__event--type3 .timeline__event__date {
+    color: #aff1b6;
+    background-color: #24b47e;
+  }
+  .timeline__event--type3:nth-child(2n + 1) .timeline__event__icon:before,
+  .timeline__event--type3:nth-child(2n + 1) .timeline__event__icon:after {
+    background: #aff1b6;
+  }
+  .timeline__event--type3 .timeline__event__icon {
+    background: #aff1b6;
+    color: #24b47e;
+  }
+  .timeline__event--type3 .timeline__event__icon:before,
+  .timeline__event--type3 .timeline__event__icon:after {
+    background: #aff1b6;
+  }
+  .timeline__event--type3 .timeline__event__title {
+    color: #24b47e;
+  }
+  .timeline__event:last-child .timeline__event__icon:before {
+    content: none;
+  }
+
+  @media (max-width: 786px) {
+    .timeline__event {
+      flex-direction: column;
+      align-self: center;
+    }
+    .timeline__event__content {
+      width: 100%;
+    }
+    .timeline__event__icon {
+      border-radius: 6px 6px 0 0;
+      width: 100%;
+      margin: 0;
+      box-shadow: none;
+    }
+    .timeline__event__icon:before,
+    .timeline__event__icon:after {
+      display: none;
+    }
+    .timeline__event__date {
+      border-radius: 0;
+      padding: 20px;
+    }
+    .timeline__event:nth-child(2n + 1) {
+      flex-direction: column;
+      align-self: center;
+    }
+    .timeline__event:nth-child(2n + 1) .timeline__event__date {
+      border-radius: 0;
+      padding: 20px;
+    }
+    .timeline__event:nth-child(2n + 1) .timeline__event__icon {
+      border-radius: 6px 6px 0 0;
+      margin: 0;
+    }
+  }
+  @-webkit-keyframes fillLeft {
+    100% {
+      right: 100%;
+    }
+  }
+  @keyframes fillLeft {
+    100% {
+      right: 100%;
+    }
+  }
+  @-webkit-keyframes fillTop {
+    100% {
+      top: 100%;
+    }
+  }
+  @keyframes fillTop {
+    100% {
+      top: 100%;
+    }
+  }
+  @-webkit-keyframes fillLeftOdd {
+    100% {
+      left: 100%;
+    }
+  }
+  @keyframes fillLeftOdd {
+    100% {
+      left: 100%;
+    }
+  }
+  
+.center {
+  margin: 0 auto;
+  width: 60%; /* Adjust the width as needed */
+  padding: 10px;
+}
+
+        </style>
+      </head>
+      <body>
+        <header class="header">
+          <img src="Olympic_1_generated.jpg" alt="Logo" class="logo" />
+          <div class="title2">Olympics Horizon</div>
+        </header>
+    
+        <div class="video-container">
+          <iframe
+            width="100%"
+            height="315"
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0&loop=1&autoplay=1"
+            allowfullscreen
+          ></iframe>
+        </div>
+    
+  <div class="center">
+  <!-- Scroll Down Button -->
+  <div class="scroll-down-btn">
+    <a href="#tinda">
+      <img src="arrow-down.png" alt="Scroll Down" width="100" height="100">
+    </a>
+  </div>
+
+
+
+
+
+  <h2>Olympics history</h2>
+  <h1>
+    The Olympics have evolved from ancient Greek rituals to a global symbol of
+    unity and athletic excellence.
+  </h1>
+  <div class="timeline"></div>
+    <!--first-->
+    <div
+      class="timeline__event animated fadeInUp delay-3s timeline__event--type1"
+    >
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">776 BCE</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">First olympics</div>
+        <div class="timeline__event__description">
+          <p>First recorded Ancient Olympic Games in Olympia, Greece.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--second-->
+
+    <div
+      class="timeline__event animated fadeInUp delay-2s timeline__event--type2"
+    >
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">393 CE</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">The Romans</div>
+        <div class="timeline__event__description">
+          <p>
+            Roman Emperor Theodosius I bans the games as part of his campaign
+            against pagan rituals.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--third-->
+
+    <div
+      class="timeline__event animated fadeInUp delay-1s timeline__event--type3"
+    >
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">1896</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">First mordern olympics</div>
+        <div class="timeline__event__description">
+          <p>
+            First Modern Olympic Games held in Athens, Greece, initiated by
+            Pierre de Coubertin.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--forth-->
+
+    <div class="timeline__event animated fadeInUp timeline__event--type1">
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">1900</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">Women particitation</div>
+        <div class="timeline__event__description">
+          <p>Women participate for the first time in the Paris Games.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--first-->
+    <div
+      class="timeline__event animated fadeInUp delay-3s timeline__event--type1"
+    >
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">1924</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">Winter olympics</div>
+        <div class="timeline__event__description">
+          <p>First Winter Olympics held in Chamonix, France.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--second-->
+
+    <div
+      class="timeline__event animated fadeInUp delay-2s timeline__event--type2"
+    >
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">1936</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">Berlin Olympics</div>
+        <div class="timeline__event__description">
+          <p>
+            Berlin Olympics, notable for Jesse Owens' victories, challenging
+            Nazi racial ideologies.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--third-->
+
+    <div
+      class="timeline__event animated fadeInUp delay-1s timeline__event--type3"
+    >
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">1940 & 1944</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">Olympics canceled</div>
+        <div class="timeline__event__description">
+          <p>Olympics canceled due to World War II.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--forth-->
+
+    <div class="timeline__event animated fadeInUp timeline__event--type1">
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">1960</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">Olympics televised</div>
+        <div class="timeline__event__description">
+          <p>Rome hosts the first Olympics televised internationally.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--first-->
+    <div
+      class="timeline__event animated fadeInUp delay-3s timeline__event--type1"
+    >
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">1964</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">Olympics in Asia.</div>
+        <div class="timeline__event__description">
+          <p>Tokyo hosts the first Olympics in Asia.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--second-->
+
+    <div
+      class="timeline__event animated fadeInUp delay-2s timeline__event--type2"
+    >
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">1980 & 1984</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">Cold War boycotts</div>
+        <div class="timeline__event__description">
+          <p>
+            Moscow and Los Angeles Games are impacted by Cold War boycotts.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--third-->
+
+    <div
+      class="timeline__event animated fadeInUp delay-1s timeline__event--type3"
+    >
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">1992</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">
+          The end of amateurism requirements
+        </div>
+        <div class="timeline__event__description">
+          <p>
+            Barcelona Olympics mark the end of amateurism requirements for
+            athletes.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--forth-->
+
+    <div class="timeline__event animated fadeInUp timeline__event--type1">
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">2000</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">Environmental sustainability</div>
+        <div class="timeline__event__description">
+          <p>2000: Sydney Games highlight environmental sustainability.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--first-->
+    <div
+      class="timeline__event animated fadeInUp delay-3s timeline__event--type1"
+    >
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">2008</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">Olympics in China</div>
+        <div class="timeline__event__description">
+          <p>Beijing hosts the first Olympics in China.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--second-->
+
+    <div
+      class="timeline__event animated fadeInUp delay-2s timeline__event--type2"
+    >
+      <div class="timeline__event__icon">
+        <!-- <i class="lni-sport"></i>-->
+      </div>
+      <div class="timeline__event__date">2020</div>
+      <div class="timeline__event__content">
+        <div class="timeline__event__title">Olympics postponed</div>
+        <div class="timeline__event__description">
+          <p>
+          Tokyo Olympics postponed to 2021 due to the COVID-19 pandemic.
+          </p>
+        </div>
+      </div>
+    </div>
+      <section id="tinda" class="paralympics">
+
+          <!-- Image container for the archery and club throw images with hover buttons -->
+          <div class="image-container" style="margin-right: 70%;">
+            <!-- First image with hover button -->
+            <div class="image-wrapper">
+              <img src="compound archery picture.webp" alt="Archery Image" style="width: 100%;" />
+              <a href="Olympics page.html">
+              <button class="hover-button">More about Olympics</button>
+              </a>            
+            </div>
+
+            <!-- Second image with hover button -->
+            <div class="image-wrapper">
+              <img src="paralympics archery.avif" alt="Club Throw Image" style="width: 100%;"/>
+              <button class="hover-button">More about Paralympics</button>
+              
+              
+              
+            </div>
+          </div>
+        
+
+  </body>
+  </html>
