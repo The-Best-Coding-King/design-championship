@@ -1,111 +1,1488 @@
-<!DOCTYPE html><html lang="en"></html>
-  <html lang="en">
-    <head>
-      <link rel="stylesheet" href="styles.css" />
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Olympics Horizon</title>
-      <link rel="stylesheet" href="styles.css" />
-      <style>
-        /* Styling for the container to hold the image */
-        .image-container {
-          width: 100%; /* Full width to center the image */
-          display: flex; /* Enables flexbox */
-          justify-content: center; /* Centers horizontally */
-          align-items: center; /* Centers vertically */
-          height: 70vh; /* Adjusts the height as needed */
-          overflow: hidden;
-           /* Ensures no overflow when hover effects occur */
+<!DOCTYPE html>
+<html lang="en"></html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olympics Horizon</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="script.js"></script>
+
+    <style>
+              /* Styling for the container to hold the image */
+              .image-container {
+                width: 100%; /* Full width to center the image */
+                display: flex; /* Enables flexbox */
+                justify-content: center; /* Centers horizontally */
+                align-items: center; /* Centers vertically */
+                height: 70vh; /* Adjusts the height as needed */
+                overflow: hidden;
+                 /* Ensures no overflow when hover effects occur */
+              }
+
+              /* General styling for the image */
+              .image-container img {
+                max-width: 90 /* Ensure the image doesn't overflow */
+                height: 90; /* Keep aspect ratio */
+                transition: filter 0.5s ease; /* Smooth transition for blur effect */
+              }
+
+              /* Hover effect: blur */
+              .image-container img:hover {
+                filter: blur(5px); /* Adds the blur on hover */
+              }
+
+              .paralympics-image img {
+                display: block;
+                margin: 0 auto; /* Centering the Paralympics image */
+                max-width: 100%;
+                height: auto;
+              }
+              .scroll-down-btn {
+        display: flex;
+        justify-content: center; /* Centers the button horizontally */
+        align-items: center;
+        margin: 20px auto; /* Centers the button and adds space around it */
+        width: 100%;
+      }
+
+      .scroll-down-btn a {
+        text-decoration: none;
+      }
+
+      .scroll-down-btn img {
+        width: 100px;
+        height: 100px;
+      }
+      /* Image container to hold the images */
+      .image-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      /* Individual wrapper for each image, needed for positioning the button */
+      .image-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* General styling for images */
+      .image-wrapper img {
+        width: 300px; /* Adjust image size as needed */
+        height: auto;
+        transition: filter 0.5s ease; /* Smooth transition for hover effect */
+      }
+
+      /* Hidden button to show on hover */
+      .hover-button {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      /* Hover effect: Show button and blur image */
+      .image-wrapper:hover img {
+        filter: blur(5px);
+      }
+
+      .image-wrapper:hover .hover-button {
+        display: block;
+      }
+          body {
+            font-family: Arial, sans-serif;
+          }
+
+          .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+          }
+
+          .tab-container button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+          }
+
+          .tab-container button:hover {
+            background-color: #45a049;
+          }
+
+          .tab-container button.active {
+            background-color: #3e8e41;
+          }
+
+          .table-container {
+            display: none;
+            overflow-y: auto;
+            max-height: 400px;
+            margin: 0 auto;
+            width: 80%;
+          }
+
+          .table-container.active {
+            display: block;
+          }
+
+          table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+          }
+
+          table,
+          th,
+          td {
+            border: 1px solid #dddddd;
+          }
+
+          th,
+          td {
+            padding: 8px;
+          }
+
+          th {
+            background-color: #f2f2f2;
+          }
+          
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
         }
+
+        .table-container {
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            overflow-x: auto;
+            display: block;
+            max-height: 300px; /* Set the maximum height for the table */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50; /* Green background for headers */
+            color: white; /* White text for headers */
+        }
+
+        td {
+            background-color: #f9f9f9; /* Light gray background for table cells */
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f2f2f2; /* Slightly darker gray for alternate rows */
+        }
+
+        .switch-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+
+        .switch-button:hover {
+            background-color: #45a049;
+        }
+
+        .switch-button.active {
+            background-color: #3e8e41;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .hidden {
+            display: none;
+        }
+
+        .table-image {
+            width: 100%; /* Adjust the width as needed */
+            max-height: 200px; /* Adjust the height as needed */
+            object-fit: cover; /* Maintain aspect ratio */
+            margin-bottom: 10px;
+        }
+
+        h2 {
+      text-align: center;
+    }
+
+    /* Styling for the table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    /* Styling for search input */
+    #tableSearch {
+      margin-bottom: 20px;
+      padding: 10px;
+      width: 100%;
+      font-size: 16px;
+      border: 1px solid #ddd;
+    }
+        </style>
+      </head>
+      <body>
+        <h2 style="text-align: center">Olympic Medal Tables</h2>
+
+        <div class="tab-container">   
+          <button class="tab-link active" onclick="openTable(event, 'bronze')">
+            Bronze
+          </button>
+          <button class="tab-link" onclick="openTable(event, 'silver')">
+            Silver
+          </button>
+          <button class="tab-link" onclick="openTable(event, 'gold')">
+            Gold
+          </button>
+          <button class="tab-link" onclick="openTable(event, 'total')">
+            Total
+          </button>
+        </div>
+
+        <!-- Search Bar -->
+<input type="text" id="mySearch" onkeyup="searchTable()" placeholder="Search table..." title="Type in a name">
+
+        <!-- Bronze Table -->
+        <div id="bronze" class="table-container active">
+          
+            
+            <div style='float:left'>
+          <table>
+            <tr>
+              <th>Country</th>
+              <th>Bronze Medals</th>
+            </tr>
+            <tr>
+              <td>United States</td>
+              <td>42</td>
+            </tr>
+            <tr>
+              <td>China</td>
+              <td>24</td>
+            </tr>
+            <tr>
+              <td>Japan</td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td>Australia</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td>France*</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td>Netherlands</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>Great Britain</td>
+              <td>29</td>
+            </tr>
+            <tr>
+              <td>South Korea</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>Italy</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>Germany</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>New Zealand</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Canada</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>Uzbekistan</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Hungary</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>Spain</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>Sweden</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Kenya</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Norway</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Ireland</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Brazil</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>Iran</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Ukraine</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Romania</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Georgia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Belgium</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>Bulgaria</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Serbia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Czech Republic</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Denmark</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Azerbaijan</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Croatia</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Cuba</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>Bahrain</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Slovenia</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Chinese Taipei</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Austria</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Hong Kong</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Philippines</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Algeria</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Indonesia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Israel</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Poland</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Kazakhstan</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Jamaica</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>South Africa</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Thailand</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Individual Neutral Athletes[A][B]</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Ethiopia</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Switzerland</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Ecuador</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Portugal</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Greece</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>Argentina</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Egypt</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Tunisia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Botswana</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Chile</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Saint Lucia</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Uganda</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Dominican Republic</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Guatemala</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Morocco</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Dominica</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Pakistan</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Turkey</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Mexico</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Armenia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Colombia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Kyrgyzstan</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>North Korea</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Lithuania</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>India</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Moldova</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Kosovo</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Cyprus</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Fiji</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Jordan</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Mongolia</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Panama</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Tajikistan</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Albania</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Grenada</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Malaysia</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Puerto Rico</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Cape Verde</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Ivory Coast</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Peru</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Qatar</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Refugee Olympic Team</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Singapore</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Slovakia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Zambia</td>
+              <td>1</td>
+            </tr>
+          </table>
+          </div>
+          <div style='float:left'>
+        </div>
+        
+        <div style='float:left'></div>
+          <img src="bronze medals mp.png" alt="Archery Image" style="width: 46%;" />           
+        </div>
+         
+            <!-- First image with hover button -->
+                    
+            
+        </div>
+
+        <!-- Silver Table -->
+        <div id="silver" class="table-container">
+          <div style='float:left'>
+          <table>
+            <tr>
+              <th>Country</th>
+              <th>Silver Medals</th>
+            </tr>
+            <tr>
+              <td>United States</td>
+              <td>44</td>
+            </tr>
+            <tr>
+              <td>China</td>
+              <td>27</td>
+            </tr>
+            <tr>
+              <td>Japan</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>Australia</td>
+              <td>19</td>
+            </tr>
+            <tr>
+              <td>France*</td>
+              <td>26</td>
+            </tr>
+            <tr>
+              <td>Netherlands</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>Great Britain</td>
+              <td>22</td>
+            </tr>
+            <tr>
+              <td>South Korea</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>Italy</td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td>Germany</td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td>New Zealand</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>Canada</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>Uzbekistan</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Hungary</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>Spain</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Sweden</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Kenya</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Norway</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Ireland</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Brazil</td>
+              <td>7</td>
+            </tr>
+            <tr>
+              <td>Iran</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>Ukraine</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Romania‡</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Georgia</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Belgium</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Bulgaria</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Serbia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Czech Republic</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Denmark</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Azerbaijan</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Croatia</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Cuba</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Bahrain</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Slovenia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Chinese Taipei</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Austria</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Hong Kong</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Philippines</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Algeria</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Indonesia</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Israel</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Poland</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Kazakhstan</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Jamaica</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>South Africa</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Thailand</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Individual Neutral Athletes[A][B]</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Ethiopia</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Switzerland</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Ecuador</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Portugal</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Greece</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Argentina</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Egypt</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Tunisia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Botswana</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Chile</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Saint Lucia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Uganda</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Dominican Republic</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Guatemala</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Morocco</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Dominica</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Pakistan</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>Turkey</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Mexico</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Armenia</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Colombia</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Kyrgyzstan</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>North Korea</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Lithuania</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>India</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Moldova</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Kosovo</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Cyprus</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Fiji</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Jordan</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Mongolia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Panama</td>
+              <td>1</td>
+            </tr>
+          </table>
+          </div>
+          <div style='float:left'>
+          </div>
+          
+          <div style='float:left'></div>
+            <img src="silver map.png" alt="silver map Image" style="width: 46%;" />           
+          </div>
+        </div>
+
+        <!-- Gold Table -->
+        <div id="gold" class="table-container">
+          <div style='float:left'>
+          <table>
+            <tr>
+              <th>Country</th>
+              <th>Gold Medals</th>
+            </tr>
+            <tr>
+              <td>United States</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>China</td>
+              <td>40</td>
+            </tr>
+            <tr>
+              <td>Japan</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>Australia</td>
+              <td>18</td>
+            </tr>
+            <tr>
+              <td>France*</td>
+              <td>16</td>
+            </tr>
+            <tr>
+              <td>Netherlands</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>Great Britain</td>
+              <td>14</td>
+            </tr>
+            <tr>
+              <td>South Korea</td>
+              <td>13</td>
+            </tr>
+            <tr>
+              <td>Italy</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>Germany</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>New Zealand</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>Canada</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>Uzbekistan</td>
+              <td>8</td>
+            </tr>
+            <tr>
+              <td>Hungary</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>Spain</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>Sweden</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Kenya</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Norway</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Ireland</td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <td>Brazil</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Iran</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Ukraine</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Romania</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Georgia</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Belgium</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Bulgaria</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Serbia</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Czech Republic</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Denmark</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Azerbaijan</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Croatia</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Cuba</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Bahrain</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Slovenia</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Chinese Taipei</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Austria</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Hong Kong</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Philippines</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Algeria</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Indonesia</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td>Israel</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Poland</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Kazakhstan</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Jamaica</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>South Africa</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Thailand</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Individual Neutral Athletes[A][B]</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Ethiopia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Switzerland</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Ecuador</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Portugal</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Greece</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Argentina</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Egypt</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Tunisia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Botswana</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Chile</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Saint Lucia</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Uganda</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Dominican Republic</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Guatemala</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Morocco</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Dominica</td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>Pakistan</td>
+              <td>1</td>
+            </tr>
+          </table>
+          </div>
+          <div style='float:left'>
+          </div>
+          
+          <div style='float:left'>
+            <img src="gold map.png" alt="Archery Image" style="width: 97%;" />           
+          </div>
+        </div>
+        <!-- Total Table -->
+<div id="total" class="table-container">
+  <div style='float:left'>
+  <table>
+      <tr>
+          <th>Country</th>
+          <th>Total Medals</th>
+      </tr>
+      <tr><td>United States</td><td>126</td></tr>
+      <tr><td>China</td><td>91</td></tr>
+      <tr><td>Japan</td><td>45</td></tr>
+      <tr><td>Australia</td><td>53</td></tr>
+      <tr><td>France*</td><td>64</td></tr>
+      <tr><td>Netherlands</td><td>34</td></tr>
+      <tr><td>Great Britain</td><td>65</td></tr>
+      <tr><td>South Korea</td><td>32</td></tr>
+      <tr><td>Italy</td><td>40</td></tr>
+      <tr><td>Germany</td><td>33</td></tr>
+      <tr><td>New Zealand</td><td>20</td></tr>
+      <tr><td>Canada</td><td>27</td></tr>
+      <tr><td>Uzbekistan</td><td>13</td></tr>
+      <tr><td>Hungary</td><td>19</td></tr>
+      <tr><td>Spain</td><td>18</td></tr>
+      <tr><td>Sweden</td><td>11</td></tr>
+      <tr><td>Kenya</td><td>11</td></tr>
+      <tr><td>Norway</td><td>8</td></tr>
+      <tr><td>Ireland</td><td>7</td></tr>
+      <tr><td>Brazil</td><td>20</td></tr>
+      <tr><td>Iran</td><td>12</td></tr>
+      <tr><td>Ukraine</td><td>12</td></tr>
+      <tr><td>Romania</td><td>9</td></tr>
+      <tr><td>Georgia</td><td>7</td></tr>
+      <tr><td>Belgium</td><td>10</td></tr>
+      <tr><td>Bulgaria</td><td>7</td></tr>
+      <tr><td>Serbia</td><td>5</td></tr>
+      <tr><td>Czech Republic</td><td>5</td></tr>
+      <tr><td>Denmark</td><td>9</td></tr>
+      <tr><td>Azerbaijan</td><td>7</td></tr>
+      <tr><td>Croatia</td><td>7</td></tr>
+      <tr><td>Cuba</td><td>9</td></tr>
+      <tr><td>Bahrain</td><td>4</td></tr>
+      <tr><td>Slovenia</td><td>3</td></tr>
+      <tr><td>Chinese Taipei</td><td>7</td></tr>
+      <tr><td>Austria</td><td>5</td></tr>
+      <tr><td>Hong Kong</td><td>4</td></tr>
+      <tr><td>Philippines</td><td>4</td></tr>
+      <tr><td>Algeria</td><td>3</td></tr>
+      <tr><td>Indonesia</td><td>3</td></tr>
+      <tr><td>Israel</td><td>7</td></tr>
+      <tr><td>Poland</td><td>10</td></tr>
+      <tr><td>Kazakhstan</td><td>7</td></tr>
+      <tr><td>Jamaica</td><td>6</td></tr>
+      <tr><td>South Africa</td><td>6</td></tr>
+      <tr><td>Thailand</td><td>6</td></tr>
+      <tr><td>Individual Neutral Athletes[A][B]</td><td>5</td></tr>
+      <tr><td>Ethiopia</td><td>4</td></tr>
+      <tr><td>Switzerland</td><td>8</td></tr>
+      <tr><td>Ecuador</td><td>5</td></tr>
+      <tr><td>Portugal</td><td>4</td></tr>
+      <tr><td>Greece</td><td>8</td></tr>
+      <tr><td>Argentina</td><td>3</td></tr>
+      <tr><td>Egypt</td><td>3</td></tr>
+      <tr><td>Tunisia</td><td>3</td></tr>
+      <tr><td>Botswana</td><td>2</td></tr>
+      <tr><td>Chile</td><td>2</td></tr>
+      <tr><td>Saint Lucia</td><td>2</td></tr>
+      <tr><td>Uganda</td><td>2</td></tr>
+      <tr><td>Dominican Republic</td><td>3</td></tr>
+      <tr><td>Guatemala</td><td>2</td></tr>
+      <tr><td>Morocco</td><td>2</td></tr>
+      <tr><td>Dominica</td><td>1</td></tr>
+      <tr><td>Pakistan</td><td>1</td></tr>
+      <tr><td>Turkey</td><td>8</td></tr>
+      <tr><td>Mexico</td><td>5</td></tr>
+      <tr><td>Armenia</td><td>4</td></tr>
+      <tr><td>Colombia</td><td>4</td></tr>
+      <tr><td>Kyrgyzstan</td><td>6</td></tr>
+      <tr><td>North Korea</td><td>6</td></tr>
+      <tr><td>Lithuania</td><td>4</td></tr>
+      <tr><td>India</td><td>6</td></tr>
+      <tr><td>Moldova</td><td>4</td></tr>
+      <tr><td>Kosovo</td><td>2</td></tr>
+      <tr><td>Cyprus</td><td>1</td></tr>
+      <tr><td>Fiji</td><td>1</td></tr>
+      <tr><td>Jordan</td><td>1</td></tr>
+      <tr><td>Mongolia</td><td>1</td></tr>
+      <tr><td>Panama</td><td>1</td></tr>
+      <tr><td>Tajikistan</td><td>3</td></tr>
+      <tr><td>Albania</td><td>2</td></tr>
+      <tr><td>Grenada</td><td>2</td></tr>
+      <tr><td>Malaysia</td><td>2</td></tr>
+      <tr><td>Puerto Rico</td><td>2</td></tr>
+      <tr><td>Cape Verde</td><td>1</td></tr>
+      <tr><td>Ivory Coast</td><td>1</td></tr>
+      <tr><td>Peru</td><td>1</td></tr>
+      <tr><td>Qatar</td><td>1</td></tr>
+      <tr><td>Refugee Olympic Team</td><td>1</td></tr>
+      <tr><td>Singapore</td><td>1</td></tr>
+      <tr><td>Slovakia</td><td>1</td></tr>
+      <tr><td>Zambia</td><td>1</td></tr>
+  </table>
+</div>
+<div style='float:left'>
+</div>
+
+<div style='float:left'>
+  <img src="total map.png" alt="total Image" style="width: 97%;" />           
+</div>
+</div>
+
+      </body>
+  </head>
+  <script>
+function showTable(tableId) {
+  function openTable(event, tableId) {
+        // Get all table containers and hide them
+        var tables = document.getElementsByClassName("table-container");
+        for (var i = 0; i < tables.length; i++) {
+            tables[i].classList.remove("active");
+        }
+
+        // Get all tab links and remove the active class
+        var tabs = document.getElementsByClassName("tab-link");
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active");
+        }
+
+        // Show the selected table
+        document.getElementById(tableId).classList.add("active");
+
+        // Add active class to the clicked tab
+        event.currentTarget.classList.add("active");
+    // Hide all tables
+    var tables = document.getElementsByClassName('table-container');
+    for (var i = 0; i < tables.length; i++) {
+        tables[i].style.display = 'none';
+    }
+    
+    // Show the selected table
+    var selectedTable = document.getElementById(tableId);
+    if (selectedTable) {
+        selectedTable.style.display = 'block';
+    }
+}
+
+// Add event listeners to the tabs to switch between tables
+document.addEventListener('DOMContentLoaded', function() {
+    var tabButtons = document.querySelectorAll('.tab-button');
+    
+    tabButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var tableId = this.getAttribute('data-table');
+            
+            // Remove active class from all buttons
+            tabButtons.forEach(function(btn) {
+                btn.classList.remove('active');
+            });
+            
+            // Add active class to the clicked button
+            this.classList.add('active');
+            
+            // Show the corresponding table
+            showTable(tableId);
+        });
+    });
+    
+    // Show the first table by default when the page loads
+    if (tabButtons.length > 0) {
+        tabButtons[0].click();
+    }
+});
+// Function to open tabs
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+  function filterTable() {
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("tableSearch");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
   
-        /* General styling for the image */
-        .image-container img {
-          max-width: 90 /* Ensure the image doesn't overflow */
-          height: 90; /* Keep aspect ratio */
-          transition: filter 0.5s ease; /* Smooth transition for blur effect */
+    for (i = 1; i < tr.length; i++) {
+      tr[i].style.display = "none"; // Hide rows initially
+      td = tr[i].getElementsByTagName("td");
+      for (var j = 0; j < td.length; j++) {
+        if (td[j]) {
+          txtValue = td[j].textContent || td[j].innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = ""; // Show the row if a match is found
+            break; // Exit the loop if a match is found in any column
+          }
         }
-  
-        /* Hover effect: blur */
-        .image-container img:hover {
-          filter: blur(5px); /* Adds the blur on hover */
-        }
-  
-        .paralympics-image img {
-          display: block;
-          margin: 0 auto; /* Centering the Paralympics image */
-          max-width: 100%;
-          height: auto;
-        }
-        .scroll-down-btn {
-  display: flex;
-  justify-content: center; /* Centers the button horizontally */
-  align-items: center;
-  margin: 20px auto; /* Centers the button and adds space around it */
-  width: 100%;
-}
-
-.scroll-down-btn a {
-  text-decoration: none;
-}
-
-.scroll-down-btn img {
-  width: 100px;
-  height: 100px;
-}
-/* Image container to hold the images */
-.image-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 20px;
-}
-
-/* Individual wrapper for each image, needed for positioning the button */
-.image-wrapper {
-  position: relative;
-  display: inline-block;
-}
-
-/* General styling for images */
-.image-wrapper img {
-  width: 300px; /* Adjust image size as needed */
-  height: auto;
-  transition: filter 0.5s ease; /* Smooth transition for hover effect */
-}
-
-/* Hidden button to show on hover */
-.hover-button {
-  display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* Hover effect: Show button and blur image */
-.image-wrapper:hover img {
-  filter: blur(5px);
-}
-
-.image-wrapper:hover .hover-button {
-  display: block;
-}
-
-      </style>
-    </head>
-    <body>
-      <header class="header">
-        <a  href="Home page.html">
-          <img src="Olympic_1_generated.jpg" alt="Logo" class="logo" />
-        </a>
-        <div class="title2">Olympics Horizon</div>
-      </header>
-
-</body>
+      }
+    }
+  }
+  </script>
 </html>

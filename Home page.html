@@ -5,42 +5,108 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Olympics Horizon</title>
-      <link rel="stylesheet" href="styles.css" />      
+      <link rel="stylesheet" href="styles.css" />
       <style>
-        /* Styling for the container to hold the image */
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create a column layout with Flexbox */
+.row {
+  display: flex;
+}
+
+/* Left column (menu) */
+.left {
+  flex: 35%;
+  padding: 15px 0;
+}
+
+.left h2 {
+  padding-left: 8px;
+}
+
+/* Right column (page content) */
+.right {
+  flex: 65%;
+  padding: 15px;
+}
+
+/* Style the search box */
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px; /* Add margin for spacing */
+}
+
+/* Style the navigation menu inside the left column */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
+}
+
+/* Style for the table */
+#myTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#myTable th, #myTable td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+   
         .image-container {
-          width: 100%; /* Full width to center the image */
-          display: flex; /* Enables flexbox */
-          justify-content: center; /* Centers horizontally */
-          align-items: center; /* Centers vertically */
-          height: 70vh; /* Adjusts the height as needed */
+          width: 100%; 
+          display: flex; 
+          justify-content: center;
+          align-items: center; 
+          height: 70vh; 
           overflow: hidden;
-           /* Ensures no overflow when hover effects occur */
+         
         }
   
-        /* General styling for the image */
+
         .image-container img {
-          max-width: 90 /* Ensure the image doesn't overflow */
-          height: 90; /* Keep aspect ratio */
-          transition: filter 0.5s ease; /* Smooth transition for blur effect */
+          max-width: 90 
+          height: 90; 
+          transition: filter 0.5s ease; 
         }
   
-        /* Hover effect: blur */
+
         .image-container img:hover {
-          filter: blur(5px); /* Adds the blur on hover */
+          filter: blur(5px);
         }
   
         .paralympics-image img {
           display: block;
-          margin: 0 auto; /* Centering the Paralympics image */
+          margin: 0 auto; 
           max-width: 100%;
           height: auto;
         }
         .scroll-down-btn {
   display: flex;
-  justify-content: center; /* Centers the button horizontally */
+  justify-content: center; 
   align-items: center;
-  margin: 20px auto; /* Centers the button and adds space around it */
+  margin: 20px auto; 
   width: 100%;
 }
 
@@ -52,7 +118,7 @@
   width: 100px;
   height: 100px;
 }
-/* Image container to hold the images */
+
 .image-container {
   display: flex;
   justify-content: space-around;
@@ -60,20 +126,19 @@
   margin-top: 20px;
 }
 
-/* Individual wrapper for each image, needed for positioning the button */
 .image-wrapper {
   position: relative;
   display: inline-block;
 }
 
-/* General styling for images */
+
 .image-wrapper img {
-  width: 300px; /* Adjust image size as needed */
+  width: 300px; 
   height: auto;
-  transition: filter 0.5s ease; /* Smooth transition for hover effect */
+  transition: filter 0.5s ease; 
 }
 
-/* Hidden button to show on hover */
+
 .hover-button {
   display: none;
   position: absolute;
@@ -88,7 +153,6 @@
   cursor: pointer;
 }
 
-/* Hover effect: Show button and blur image */
 .image-wrapper:hover img {
   filter: blur(5px);
 }
@@ -101,15 +165,10 @@
       </style>
     </head>
     <body>
-      <header class="header" >
-        
-        <a  href="Home page.html">
-          <img src="Olympic_1_generated.jpg" alt="Logo" class="logo" />
-        </a>
+      <header class="header">
+        <img src="Olympic_1_generated.jpg" alt="Logo" class="logo" />
         <div class="title2">Olympics Horizon</div>
-      
       </header>
-    
   
       <div class="video-container">
         <iframe
@@ -292,6 +351,6 @@
           </div>
         </div>
        
-</script>
+
 </body>
 </html>

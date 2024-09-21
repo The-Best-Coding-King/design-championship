@@ -1,40 +1,32 @@
-function smoothScrollToBottom(duration) {
-  const startPosition = window.pageYOffset;
-  const targetPosition =
-    document.documentElement.scrollHeight - window.innerHeight;
-  const distance = targetPosition - startPosition;
-  let startTime = null;
+function searchTable() {
+  // Get the search input and convert to uppercase for case-insensitive comparison
+  var input = document.getElementById("mySearch");
+  var filter = input.value.toUpperCase();
 
-  function animationScroll(currentTime) {
-    if (startTime === null) startTime = currentTime;
-    const timeElapsed = currentTime - startTime;
-    const run = ease(timeElapsed, startPosition, distance, duration);
-    window.scrollTo(0, run);
-    if (timeElapsed < duration) requestAnimationFrame(animationScroll);
+  // Get all table containers (you may want to apply search only to the currently visible one)
+  var activeTable = document.querySelector(".table-container.active table");
+  var tr = activeTable.getElementsByTagName("tr");
+
+  // Loop through all table rows (except the first row which is the header)
+  for (var i = 1; i < tr.length; i++) {
+    tr[i].style.display = "none"; // Initially hide the row
+    var td = tr[i].getElementsByTagName("td");
+    var found = false; // Reset found flag for each row
+
+    // Loop through all table cells in the row
+    for (var j = 0; j < td.length; j++) {
+      if (td[j]) {
+        var txtValue = td[j].textContent || td[j].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          found = true; // If a match is found, set found to true
+          break; // Stop checking the other cells if one match is found
+        }
+      }
+    }
+
+    // If found, display the row, otherwise hide it
+    if (found) {
+      tr[i].style.display = "";
+    }
   }
-
-  function ease(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t + b;
-    t--;
-    return (-c / 2) * (t * (t - 2) - 1) + b;
-  }
-
-  requestAnimationFrame(animationScroll);
 }
-
-// Event listener for the button
-document.addEventListener("DOMContentLoaded", function () {
-  document
-    .querySelector(".scroll-down-btn a")
-    .addEventListener("click", function (e) {
-      e.preventDefault();
-      smoothScrollToBottom(4026); // 1000ms = 1 second duration
-    });
-});
-const targetPosition =
-  document.documentElement.scrollHeight - window.innerHeight;
-scrollHeight = 4026;
-
-
-
