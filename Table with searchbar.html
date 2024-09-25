@@ -2,9 +2,8 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+   
     <style>
-
-      
 
       body {
         font-family: Lato, sans-serif;
@@ -90,7 +89,7 @@
       }
 
       iframe {
-      width: 100%;
+      width: 200%;
       height: 5000px; /* Set the height as needed */
       border: none;
       overflow: hidden;
@@ -115,6 +114,8 @@
         </button>
         <button id="tab-3" role="tab" aria-controls="tabPanel-3" aria-selected="false" tabindex="-1">Gold
         </button>
+        <button id="tab-3" role="tab" aria-controls="tabPanel-4" aria-selected="false" tabindex="-1">Total
+        </button>
         
       </div>
     
@@ -130,19 +131,17 @@
         <div id="tabPanel-3" hidden role="tabpanel" tabindex="0" aria-labelledby="tab-3">
           <iframe src="gold-table.html" title="Embedded HTML" scrolling="no"></iframe>
         </div>
-    
+        <div id="tabPanel-4" hidden role="tabpanel" tabindex="0" aria-labelledby="tab-3">
+          <iframe src="total-table.html" title="Embedded HTML" scrolling="no"></iframe>
+        </div>
         
       </div>
     </div>
     </div>
-
+  </body>
+  <script>
     
-    
-
-    <script>
-     
-
-      const tabsContainer = document.querySelector("[role=tablist]");
+const tabsContainer = document.querySelector("[role=tablist]");
 const tabButtons = tabsContainer.querySelectorAll("[role=tab]");
 const tabPanels = document.querySelectorAll("[role=tabpanel]");
 
@@ -243,8 +242,5 @@ function moveIndicator(oldTab, newTab) {
     tabsContainer.style.setProperty("--_width", newTabWidth);
   }, 220);
 }
-
-
-    </script>
-  </body>
+  </script>
 </html>

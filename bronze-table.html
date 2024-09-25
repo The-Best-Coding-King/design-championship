@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="script.js"></script>
     <style>
 
       #myInput {
@@ -96,9 +97,15 @@
           background: #555; 
         }
       }
+      #div-child {
+        float: left;
+        margin-right:15px;
+      }
 
-
-
+      img.sticky {
+  position: sticky;
+  top: 0;
+}
     </style>
       <link
         rel="stylesheet"
@@ -107,16 +114,14 @@
   </head>
   <body>
     
-
-
-
-
+  
     
-    <div class="search">
-      <span class="search-icon material-symbols-outlined">search</span>
-      <input class="search-input" type="search" id="myInput" onkeyup="myFunction()" placeholder="search" />
-    </div>
-    </br>
+    <div id="div-child">
+      <div class="search">
+        <span class="search-icon material-symbols-outlined">search</span>
+        <input class="search-input" type="search" id="myInput" onkeyup="myFunction()" placeholder="search" />
+      </div>
+      </br>
     <table id="myTable">
       <tr class="header">
         <th style="width: 60%">Country</th>
@@ -491,28 +496,9 @@
           <td>1</td>
         </tr>
     </table>
-
-    <script>
-      function myFunction() {
-        var input, filter, table, tr, td, i, txtValue;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        table = document.getElementById("myTable");
-        tr = table.getElementsByTagName("tr");
-        for (i = 0; i < tr.length; i++) {
-          td = tr[i].getElementsByTagName("td")[0];
-          if (td) {
-            txtValue = td.textContent || td.innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-              tr[i].style.display = "";
-            } else {
-              tr[i].style.display = "none";
-            }
-          }
-        }
-      }
-
-   
-    </script>
+    </div>
+    <div id="div-child">
+      <img class="stick" img src="inforgraph on medals tally.webp">  
+    </div>
   </body>
 </html>
